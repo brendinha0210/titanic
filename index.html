@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <title>Corinthians</title>
+    <title>Billie Eilish</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -14,13 +14,21 @@
 <body>
     <header class=" p-5">
 
-        <nav class="container d-flex justify-content-between align-items-center">
-            <img src="img/logo.png" alt="Logotipo do Corinthians" class="nav-img " loading="lazy">
+        <nav class="container d-flex justify-content-between align-items-center" >
+            <img src="img/logo.png" class="nav-img " loading="lazy">
             <ul class="nav mt-5">
                 <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
                 <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-            </ul>          
+            </ul>
+            <div id="acessibilidade" class="menu-acessibilidade"> 
+                <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false">acessibilidade</button>
+                <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+                    <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-label="Aumentar o tamanho da fonte">A+</button>
+                    <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-label="diminuir o tamanho da fonte">A-</button>
+                    <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alterna o contraste de cores"> <i class="bi bi-shadows"></i></button>         
+                </div>
+            </div>
         </nav>
        
     </header>
@@ -31,54 +39,69 @@
         <section id="inicio" class="my-5">
             <div class="inicio-fundo d-flex justify-content-between align-items-center">
                 <div class="esquerda-conteudo">
-                    <h1 class="display-4 text-white fst-italic fw-bold">Boas-vindas a</h1>
-                    <img src="img/logo-2.png" alt="Logotipo secundário da Tropicália" class="mb-3" width="563"
+                 <h1 class="display-4 text fst-italic fw-bold"> Um Resumo da Vida de</h1>
+</h1>
+
+</h1>
+                    <img src="img/logo-2.png" alt="A imagem apresenta o nome Billie Eilish em tons de verde e azul" title="Billie Eilish fonte - Domínio: © Beatriz Lopes, 2025" class="mb-3" width="563"
                         height="278" loading="lazy">
-                    <a href="#tropicalia"
+                    <a href="#billieeilish"
                         class="btn btn-primary btn-lg botao-inicio fw-semibold">Quero
                         conhecer!</a>
                 </div>
+                <img src="img/blohsh.png" alt="A imagem apresenta um boneco chamado Blohsh que faz referçência aos fãs da cantora Billie Eilish, uma figura humana verde com contorno azul escuro em fundo transparente, em pose de movimento." title="Blohsh - CC0 Domínio Público / Acervo Arquivo Nacional" class="img-fluid img-inicio">
 
-            </div>
+              </div>
         </section>
 
-        <section id="Corinthians" class="my-5 pt-6 secao-tropicalia">
+        <section id="billieeilish" class="my-5 pt-6 secao-billie-eilish" tabindex="0" aria-label="Seção explicativa sobre a cantora Billie Eilish">
             <div class="container d-flex align-items-center ">
-                  <div class="col-5">
-                    <h2>Sport Club Corinthians Paulista</h2>
-                    <p class="p-2">Foi fundado como uma equipe de futebol no dia 1 de setembro de 1910 
-                        por um grupo de operários anarco-sindicalistas na região da Ponte Grande, no bairro do Bom Retiro. 
-                        Seu nome foi inspirado no Corinthian Football Club de Londres, 
-                        que excursionava pelo Brasil.Além da equipe profissional de futebol, 
-                        o Timão também se expandiu e, hoje, conta com um time feminino multicampeão 
-                        e com diversas categorias de base. Outros esportes também foram incorporados. 
-                        São muitas as modalidades em que é possível torcer para o Corinthians, 
-                        alguns exemplos são o futsal e o baquete.</p>
+                <div class="col-4 d-flex justify-content-center ">
+                    <img src=" img/billieP&B.jpeg" alt="A imagem em preto e branco mostra Billie Eilish com o rosto desfocado, cabelo puxado para trás, usando um monitor auricular e um colar de corrente grossa. O fundo escuro destaca o estilo marcante e misterioso da foto, que parece ser promocional ou artística" title=" Billie Eilish no Pukkelpop Festival (18/08/2019) - CC0 Domínio Público / Acervo Arquivo Nacional" class="rounded-pill" width="273" height="331" loading="lazy" style="border: 5px solid #84f918; border-radius: 50%;">
+                </div>
+                <div class="col-5">
+                    <h2>Quem é Billie Eilish?</h2>
+                    <p class="p-2"> Billie Eilish é uma cantora e compositora norte-americana que ficou conhecida em 2015 com o sucesso "Ocean Eyes", criado em parceria com seu irmão e produtor Finneas. Desde então, sua carreira decolou com um estilo único e músicas marcantes.
+
+Nascida em Los Angeles, ela cresceu em uma família artística — seus pais, Maggie Baird e Patrick O’Connell, também são músicos e atores. Billie foi educada em casa e, desde pequena, mostrou interesse por música e performance, chegando a fazer parte do coral infantil de Los Angeles aos 8 anos.
+
+Seu som mistura pop alternativo, eletrônico e elementos sombrios que se tornaram sua marca registrada. Com letras introspectivas e produções minimalistas, Billie conquistou uma base de fãs global e se firmou como uma das vozes mais influentes de sua geração.
+                    Fonte: Site Wikipedia </p>
                 </div>
             </div>
         </section>
 
-        <section id="galeria">
+        <section id="galeria" tabindex="0" aria-label="Seção de galeria de imagens">
             <h2 class="text-center pt-5">Galeria</h2>
-            <div class="container p-3 mt-3 fundo-galeria ">
+            <div class="container p-3 mt-3 fundo-galeria">
 
                 <div class="row justify-content-md-center">
                     <div class="col-md-4">
-                        <img src="img/lossy-page1-640px-Jorge_Ben_e_o_Trio_Mocotó_no_Teatro_da_Lagoa,_1971.tif.jpg"
+                        <img src="img/BillieEilishO2160622.jpg" alt="A imagem mostra Billie Eilish no palco, vestindo uma jaqueta clara com desenhos coloridos e uma grande borboleta estampada. O fundo azul iluminado e as luzes brilhantes criam uma atmosfera energética, com o público vibrando e mãos levantadas."
+                            title="Billie Eilish: Live at the O2 - CC0 Domínio Público / Acervo Arquivo Nacional"
                             class="img-fluid rounded-5" loading="lazy">
                     </div>
                     <div class="col-md-4">
-                        <img src="img/lossy-page1-640px-Os_Mutantes_2.tif.jpg" class="img-fluid rounded-5"
+                        <img src="img/Billie_Eilish_08_10_2017.jpg" alt="A imagem mostra Billie Eilish ajoelhada no palco durante um show, cantando com intensidade. Ela veste um colete laranja vibrante sobre uma roupa preta com calça larga e sapatos plataforma. O cenário tem iluminação azul e roxa, com o público envolvido e celulares erguidos." title="Billie Eilish 08/10/2017 - CC0 Domínio Público / Acervo Arquivo Nacional" class="img-fluid rounded-5"
                             loading="lazy">
                     </div>
                 </div>
-            </div>
+                <div class="row mt-4  justify-content-md-center">
+                    <div class="col-md-4">
+                        <img src="img/Billie Eilish no Pukkelpop Music Festival 2019.jpg" alt="A imagem mostra Billie Eilish no palco durante um show, com uma multidão animada ao fundo. Ela veste uma camiseta com o nome "BILLIE", shorts xadrez verdes e um boné. O público está vibrante, muitos com celulares levantados para registrar o momento." title="Billie Eilish no Pukkelpop Music Festival 2019 - CC0 Domínio Público / Acervo Arquivo Nacional" class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/Billie_Eilish_MTV.jpg" alt="A imagem mostra Billie Eilish segurando um microfone durante uma apresentação, com iluminação vibrante em tons de azul e roxo. Ela usa uma roupa estampada com desenhos em vermelho, preto e branco, transmitindo estilo e intensidade no palco." title="Billie Eilish no MTV - CC0 Domínio Público / Acervo Arquivo Nacional"
+                            class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                </div>
+             </div>
         </section>
 
         <section id="contato">
             <div class="container p-5 d-flex justify-content-center">
                 <div class="col-md-8 col-lg-10 rounded-5 formulario"> <!-- Caixa do formulário com 60% de largura -->
-                    <h2 class="mb-3">Entre em contato</h2>
+                    <h2 class="mb-3">Deixe seu Feedback</h2>
                     <form>
                         <div class="form-group mb-3">
                             <label for="nome">Nome</label>
@@ -96,7 +119,7 @@
                                 placeholder="Escreva sua mensagem"></textarea>
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill tamanho-botao">Enviar
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar
                                 mensagem</button>
                         </div>
                     </form>
@@ -106,13 +129,14 @@
     </main>
     <footer class="text-center p-3 fst-italic">
         <p>Acesse nossas redes:</p>
-        <i class="bi bi-whatsapp"></i>
-        <i class="bi bi-instagram"></i>
-        <i class="bi bi-tiktok"></i>
-        <p class="mt-3">Desenvolvido por Brenda de Souza Costa. Projeto fictício sem fins comerciais.</p>
+        <i class="bi bi-whatsapp"></i> <p> 11 99742-5202 </p> 
+        <i class="bi bi-instagram"></i> <p> @_breenda.sp_ </p> 
+        <i class="bi bi-tiktok"> </i> <p> @_brendinhaa02_ </p>
+        <p class="mt-3">Desenvolvido por Brenda, projeto fictício para fins informacionais.</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
     <script src="script.js"></script>
-
+  
 </body>
 
 </html>
