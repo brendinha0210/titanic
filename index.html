@@ -1,211 +1,290 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Club Corinthians Paulista - O Time do Povo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <title>Sport Club Corinthians Paulista</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #101010;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1599481238640-4c12727c2a82?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito Parallax */
+        }
+        /* Animações de entrada */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width .3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
+<body class="text-white antialiased">
 
-<body>
-    <header class="p-5">
-
-        <nav class="container d-flex justify-content-between align-items-center">
-            <img src="img/logo.png" class="nav-img" loading="lazy" alt="Logo do Sport Club Corinthians Paulista">
-            <ul class="nav mt-5">
-                <li class="nav-item"><a class="nav-link" href="#historia">História</a></li>
-                <li class="nav-item"><a class="nav-link" href="#titulos">Títulos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+    <!-- Cabeçalho -->
+    <header class="bg-black/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-black uppercase tracking-wider">Corinthians</h1>
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#historia" class="nav-link transition-colors">História</a></li>
+                <li><a href="#titulos" class="nav-link transition-colors">Títulos</a></li>
+                <li><a href="#idolos" class="nav-link transition-colors">Ídolos</a></li>
+                <li><a href="#noticias" class="nav-link transition-colors">Notícias</a></li>
+                <li><a href="#contato" class="nav-link transition-colors">Contato</a></li>
             </ul>
-            <div id="acessibilidade" class="menu-acessibilidade">
-                <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false">acessibilidade</button>
-                <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
-                    <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-label="Aumentar o tamanho da fonte">A+</button>
-                    <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-label="diminuir o tamanho da fonte">A-</button>
-                    <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alterna o contraste de cores"> <i class="bi bi-shadows"></i></button>
-                </div>
-            </div>
+            <!-- Botão do Menu Mobile -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </nav>
-
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90">
+            <a href="#historia" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">História</a>
+            <a href="#titulos" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">Títulos</a>
+            <a href="#idolos" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">Ídolos</a>
+            <a href="#noticias" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">Notícias</a>
+            <a href="#contato" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">Contato</a>
+        </div>
     </header>
 
-    <main class="container my-5">
+    <!-- Seção Principal (Hero) -->
+    <section class="hero-bg py-28 md:py-40 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-wider animate-fade-in-up">Time do Povo</h2>
+            <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-gray-200 animate-fade-in-up" style="animation-delay: 0.2s;">"O Corinthians vai ser o time do povo e o povo é quem vai fazer o time." - Miguel Battaglia, 1º Presidente.</p>
+        </div>
+    </section>
 
-        <section id="historia" class="my-5">
-            <div class="inicio-fundo d-flex justify-content-between align-items-center">
-                <div class="esquerda-conteudo">
-                    <h1 class="display-4 text fst-italic fw-bold">Sport Club Corinthians Paulista</h1>
-                    <p class="lead my-4">Conhecido como o "Time do Povo", o Corinthians foi fundado em 1910 por operários e se tornou uma das maiores potências do futebol brasileiro, com uma torcida apaixonada e uma história rica em lutas e glórias.</p>
-                    <a href="#titulos" class="btn btn-primary btn-lg botao-inicio fw-semibold">Ver Principais Títulos</a>
-                </div>
-                <img src="https://via.placeholder.com/500x400.png?text=Neo+Química+Arena" alt="Imagem da Neo Química Arena, estádio do Corinthians" title="Neo Química Arena" class="img-fluid img-inicio rounded">
-            </div>
-        </section>
+    <main class="container mx-auto px-6 py-12 md:py-20">
 
-        <section id="titulos" class="my-5 pt-6" tabindex="0" aria-label="Seção de principais títulos do Corinthians">
-            <div class="container d-flex align-items-center">
-                <div class="col-4 d-flex justify-content-center">
-                    <img src="https://via.placeholder.com/300x350.png?text=Mundial+2012" alt="Time do Corinthians comemorando o título Mundial de 2012" title="Conquista do Mundial de Clubes da FIFA 2012" class="rounded-pill" width="273" height="331" loading="lazy" style="border: 5px solid #000000; border-radius: 50%;">
-                </div>
-                <div class="col-5">
-                    <h2>Principais Títulos</h2>
-                    <ul class="list-group list-group-flush p-2">
-                        <li class="list-group-item"><strong>Mundial de Clubes da FIFA:</strong> 2 (2000, 2012)</li>
-                        <li class="list-group-item"><strong>Copa Libertadores da América:</strong> 1 (2012 - Invicto)</li>
-                        <li class="list-group-item"><strong>Campeonato Brasileiro:</strong> 7</li>
-                        <li class="list-group-item"><strong>Copa do Brasil:</strong> 3</li>
-                        <li class="list-group-item"><strong>Campeonato Paulista:</strong> 30 (Maior vencedor)</li>
-                    </ul>
+        <!-- Seção de História -->
+        <section id="historia" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="animated-section fade-in-up">
+                <h3 class="text-3xl font-bold text-center mb-8">Nossa História</h3>
+                <div class="bg-gray-900/50 p-8 rounded-lg shadow-2xl max-w-4xl mx-auto border border-gray-700">
+                    <p class="text-gray-300 leading-relaxed">
+                        Em 1º de setembro de 1910, no bairro do Bom Retiro, em São Paulo, um grupo de cinco operários — Joaquim Ambrósio, Antônio Pereira, Rafael Perrone, Anselmo Corrêa e Carlos Silva — fundou o Sport Club Corinthians Paulista. O nome foi inspirado no Corinthian FC, um time inglês que excursionava pelo Brasil.
+                    </p>
+                    <br>
+                    <p class="text-gray-300 leading-relaxed">
+                        Com a ajuda de outros moradores do bairro, o primeiro campo foi um terreno alugado na Rua José Paulino, que foi capinado e aplainado para os treinos. A paixão popular e a garra demonstrada desde o início foram os pilares que transformaram o clube em uma das maiores potências do futebol brasileiro e mundial.
+                    </p>
                 </div>
             </div>
         </section>
-
-        <section id="galeria" tabindex="0" aria-label="Seção de galeria de imagens do Corinthians">
-            <h2 class="text-center pt-5">Galeria da Fiel</h2>
-            <div class="container p-3 mt-3 fundo-galeria">
-
-                <div class="row justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/600x400.png?text=A+Fiel+Torcida" alt="A Fiel Torcida do Corinthians lotando o estádio com bandeiras e fumaça." title="A Fiel Torcida" class="img-fluid rounded-5" loading="lazy">
+        
+        <!-- Seção de Títulos -->
+        <section id="titulos" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="animated-section fade-in-up">
+                <h3 class="text-3xl font-bold text-center mb-12">Principais Conquistas</h3>
+                <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <p class="text-5xl font-black">2x</p>
+                        <p class="text-gray-400">Mundial de Clubes FIFA</p>
                     </div>
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/600x400.png?text=Corinthians+Feminino" alt="As jogadoras do time feminino do Corinthians comemorando um título importante." title="Corinthians Feminino - As Brabas" class="img-fluid rounded-5" loading="lazy">
+                    <div>
+                        <p class="text-5xl font-black">1x</p>
+                        <p class="text-gray-400">Copa Libertadores</p>
                     </div>
-                </div>
-                <div class="row mt-4 justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/600x400.png?text=Invasão+de+1976" alt="Imagem histórica da Invasão Corinthiana no Maracanã em 1976." title="Invasão Corinthiana de 1976" class="img-fluid rounded-5" loading="lazy">
+                    <div>
+                        <p class="text-5xl font-black">7x</p>
+                        <p class="text-gray-400">Campeonato Brasileiro</p>
                     </div>
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/600x400.png?text=Ídolo+Sócrates" alt="O ídolo Sócrates, líder da Democracia Corinthiana, com o punho erguido." title="Doutor Sócrates - Ídolo Eterno" class="img-fluid rounded-5" loading="lazy">
+                     <div>
+                        <p class="text-5xl font-black">30x</p>
+                        <p class="text-gray-400">Campeonato Paulista</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contato">
-            <div class="container p-5 d-flex justify-content-center">
-                <div class="col-md-8 col-lg-10 rounded-5 formulario">
-                    <h2 class="mb-3">Deixe seu Feedback</h2>
-                    <form>
-                        <div class="form-group mb-3">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1" placeholder="Digite seu nome completo">
+        <!-- Seção de Ídolos -->
+        <section id="idolos" class="mb-16 md:mb-24 scroll-mt-20">
+             <div class="animated-section fade-in-up">
+                <h3 class="text-3xl font-bold text-center mb-12">Ídolos Eternos</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card Ídolo 1 -->
+                    <div class="bg-gray-900 rounded-lg overflow-hidden text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-800">
+                        <img src="https://placehold.co/400x400/111111/FFFFFF?text=Sócrates" alt="[Imagem do jogador Sócrates]" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold">Sócrates</h4>
+                            <p class="text-gray-400">O Doutor da Democracia Corinthiana.</p>
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1" placeholder="Digite seu email">
+                    </div>
+                    <!-- Card Ídolo 2 -->
+                    <div class="bg-gray-900 rounded-lg overflow-hidden text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-800">
+                        <img src="https://placehold.co/400x400/111111/FFFFFF?text=Cássio" alt="[Imagem do goleiro Cássio]" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold">Cássio</h4>
+                            <p class="text-gray-400">O Gigante das nossas maiores glórias.</p>
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4" placeholder="Escreva sua mensagem"></textarea>
+                    </div>
+                    <!-- Card Ídolo 3 -->
+                    <div class="bg-gray-900 rounded-lg overflow-hidden text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-800">
+                        <img src="https://placehold.co/400x400/111111/FFFFFF?text=Marcelinho" alt="[Imagem do jogador Marcelinho Carioca]" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold">Marcelinho</h4>
+                            <p class="text-gray-400">O Pé-de-Anjo que encantou a Fiel.</p>
                         </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar mensagem</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Seção de Notícias -->
+        <section id="noticias" class="mb-16 md:mb-24 scroll-mt-20">
+             <div class="animated-section fade-in-up">
+                <h3 class="text-3xl font-bold text-center mb-12">Últimas Notícias</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card de Notícia 1 -->
+                    <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800 flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/111111/FFFFFF?text=Jogo+Decisivo" alt="[Imagem da notícia sobre o próximo jogo]" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs font-semibold text-gray-400 uppercase mb-2">Futebol Masculino</span>
+                            <h4 class="text-xl font-bold mb-2">Timão se prepara para clássico decisivo no fim de semana</h4>
+                            <p class="text-gray-400 text-sm flex-grow">Equipe treina forte para o confronto que pode valer a liderança do campeonato.</p>
+                            <a href="#" class="mt-4 text-white font-semibold self-start hover:underline">Leia mais &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Card de Notícia 2 -->
+                    <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800 flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/111111/FFFFFF?text=Mercado+da+Bola" alt="[Imagem da notícia sobre contratação]" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs font-semibold text-gray-400 uppercase mb-2">Mercado da Bola</span>
+                            <h4 class="text-xl font-bold mb-2">Corinthians anuncia novo reforço para o meio-campo</h4>
+                            <p class="text-gray-400 text-sm flex-grow">Jogador chega para fortalecer o elenco na continuação da temporada.</p>
+                            <a href="#" class="mt-4 text-white font-semibold self-start hover:underline">Leia mais &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Card de Notícia 3 -->
+                    <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800 flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/111111/FFFFFF?text=Fiel+Torcedor" alt="[Imagem da Fiel Torcida]" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs font-semibold text-gray-400 uppercase mb-2">Fiel Torcedor</span>
+                            <h4 class="text-xl font-bold mb-2">Nova campanha de sócios-torcedores é lançada com benefícios exclusivos</h4>
+                            <p class="text-gray-400 text-sm flex-grow">Clube busca aproximar ainda mais a torcida e oferece novas vantagens no programa.</p>
+                            <a href="#" class="mt-4 text-white font-semibold self-start hover:underline">Leia mais &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="scroll-mt-20">
+             <div class="animated-section fade-in-up">
+                <h3 class="text-3xl font-bold text-center mb-8">Entre em Contato</h3>
+                <form id="contact-form" class="max-w-xl mx-auto bg-gray-900/50 p-8 rounded-lg shadow-2xl border border-gray-700">
+                    <div id="form-content">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-300 mb-2">Nome</label>
+                            <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-600 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-white/50" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-600 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-white/50" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" class="w-full bg-gray-800 border border-gray-600 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-white/50" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-white text-black font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-colors w-full sm:w-auto">Enviar Mensagem</button>
+                        </div>
+                    </div>
+                    <div id="success-message" class="hidden text-center">
+                        <h4 class="text-2xl font-bold mb-4">Obrigado!</h4>
+                        <p>Sua mensagem foi enviada. Vai, Corinthians!</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="text-center p-3 fst-italic">
-        <p>Acesse nossas redes:</p>
-        <i class="bi bi-whatsapp"></i>
-        <p> 11 99742-5202 </p>
-        <i class="bi bi-instagram"></i>
-        <p> @_breenda.sp_ </p>
-        <i class="bi bi-tiktok"> </i>
-        <p> @_brendinhaa02_ </p>
-        <p class="mt-3">Desenvolvido por Brenda, projeto fictício para fins informacionais.</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
-    <script src="script.js"></script>
-
-</body>
-
-</html>
-Observação Importante: As imagens na galeria (<img>) foram substituídas por placeholders (https://via.placeholder.com/...). Você precisará trocar os valores de src="..." para o caminho correto das suas novas imagens do Corinthians.
-
-
-
-
-
-
-
-
-faça uma interação no fim do site com a pessoa possa dar feedback e que mais no fim ainda, esteja escrito que o site foi criado por Brenda
-
-
-Com certeza! A estrutura que você me enviou já tem exatamente isso que você pediu:
-
-Uma seção de "Deixe seu Feedback": Onde o usuário pode preencher um formulário com nome, email e mensagem.
-
-Uma nota de rodapé: Que informa que o site foi desenvolvido por você, Brenda.
-
-Para deixar isso ainda mais claro e talvez um pouco mais organizado, fiz um pequeno ajuste no código do <footer> (o rodapé). Separei as suas informações de contato da nota de desenvolvimento para melhorar a leitura.
-
-Você pode substituir todo o seu <section id="contato"> e <footer> pelo código abaixo. O resto do arquivo pode continuar igual ao que te enviei anteriormente.
-
-Código Ajustado para o Final do Site (<main> e <footer>)
-Copie esta parte e substitua o final do seu arquivo index.html, logo após a seção da galeria.
-
-HTML
-
-        <section id="contato">
-            <div class="container p-5 d-flex justify-content-center">
-                <div class="col-md-8 col-lg-10 rounded-5 formulario">
-                    <h2 class="mb-3 text-center">Deixe seu Feedback</h2>
-                    <p class="text-center mb-4">Gostou do site? Tem alguma sugestão? Envie uma mensagem!</p>
-                    <form>
-                        <div class="form-group mb-3">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1" placeholder="Digite seu nome completo">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1" placeholder="seunome@email.com">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4" placeholder="Escreva sua mensagem aqui..."></textarea>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar Mensagem</button>
-                        </div>
-                    </form>
-                </div>
+    <!-- Rodapé -->
+    <footer class="bg-black mt-16 md:mt-24">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" aria-label="Facebook do Corinthians" class="hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238 .195 2.238 .195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                <a href="#" aria-label="Twitter do Corinthians" class="hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                <a href="#" aria-label="Instagram do Corinthians" class="hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427.465C9.793 2.013 10.147 2 12.315 2zM12 8.118a3.882 3.882 0 100 7.764 3.882 3.882 0 000-7.764zM12 14.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zM16.882 8.25a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" clip-rule="evenodd" /></svg></a>
             </div>
-        </section>
-
-    </main>
-
-    <footer class="text-center p-4" style="background-color: #f8f9fa;">
-        <div class="container">
-            <p class="mb-2">Acesse minhas redes:</p>
-            <div class="d-flex justify-content-center gap-3 mb-3">
-                <span><i class="bi bi-whatsapp"></i> 11 99742-5202</span>
-                <span><i class="bi bi-instagram"></i> @_breenda.sp_</span>
-                <span><i class="bi bi-tiktok"></i> @_brendinhaa02_</span>
-            </div>
-            <hr>
-            <p class="mt-3 fst-italic">
-                <strong>Desenvolvido por Brenda.</strong>
-                <br>
-                <small>Projeto fictício para fins informacionais.</small>
-            </p>
+            <p>Projeto fictício para fins de estudo. Desenvolvido com carinho por um Fiel.</p>
+            <p>&copy; 2024 - Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lógica para o menu mobile
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Fecha o menu mobile ao clicar em um link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Lógica para animação de scroll
+            const animatedSections = document.querySelectorAll('.animated-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            animatedSections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Lógica para o formulário de contato
+            const contactForm = document.getElementById('contact-form');
+            const formContent = document.getElementById('form-content');
+            const successMessage = document.getElementById('success-message');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formContent.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+            });
+        });
+    </script>
 
 </body>
-
 </html>
+
