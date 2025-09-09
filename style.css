@@ -1,84 +1,179 @@
+/* Estilos Gerais e Tema Corinthians */
+:root {
+    --cor-primaria: #101010; /* Preto */
+    --cor-secundaria: #FFFFFF; /* Branco */
+    --cor-texto-primario: #333;
+    --cor-texto-secundario: #FFFFFF;
+    --cor-destaque: #B8860B; /* Dourado para detalhes (opcional) */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: var(--cor-texto-primario);
+    transition: background-color 0.3s, color 0.3s;
 }
 
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* Cabeçalho e Navegação */
 header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
 }
 
-header h1 {
-    margin: 0;
+.nav-img {
+    max-width: 100px; /* Ajuste o tamanho do logo */
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#toggleAcessibilidade {
-    background-color: #ffd700; /* Dourado */
-    color: #000;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+.nav-link {
+    color: var(--cor-secundaria) !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botão Principal e Seções */
+.botao-inicio {
+    background-color: var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.botao-inicio:hover {
+    background-color: #333;
+    border-color: #333;
 }
 
 section {
-    margin-bottom: 40px;
+    padding: 60px 0;
 }
 
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+.img-inicio {
+    max-width: 450px;
+    height: auto;
 }
 
-/* Estilos para o modo de alto contraste */
-body.high-contrast {
-    background-color: #000;
-    color: #fff;
+/* Galeria */
+#galeria img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: 280px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
 }
-body.high-contrast header, body.high-contrast footer {
+
+#galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulário de Feedback */
+.formulario {
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.formulario .btn-primary {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+.formulario .btn-primary:hover {
     background-color: #333;
+    border-color: #333;
 }
-body.high-contrast a {
-    color: #00ffff; /* Ciano para links */
+
+/* Rodapé */
+footer {
+    background-color: #e9ecef;
+    color: var(--cor-texto-primario);
 }
-body.high-contrast #toggleAcessibilidade {
+
+
+/* --- ACESSIBILIDADE --- */
+
+/* Menu de Acessibilidade */
+.menu-acessibilidade {
+    position: relative;
+}
+
+#botao-acessibilidade {
     background-color: #fff;
     color: #000;
+    border: 2px solid #000;
 }
 
-/* Outros estilos para seções, artigos, etc. */
+.opcoes-acessibilidade {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.opcoes-acessibilidade.ativo {
+    display: flex; /* Mostra as opções */
+    gap: 10px;
+}
+
+.opcoes-acessibilidade button {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Estilos de Alto Contraste */
+body.high-contrast {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast .formulario {
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+}
+
+body.high-contrast .list-group-item {
+    background-color: transparent;
+    color: #FFFFFF;
+    border-color: #444;
+}
+
+body.high-contrast a, body.high-contrast .nav-link {
+    color: #FFFF00 !important; /* Amarelo para links, alta visibilidade */
+}
+
+body.high-contrast img {
+    filter: grayscale(100%) contrast(150%);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    header .container, .inicio-fundo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-img {
+        margin-bottom: 20px;
+    }
+
+    .inicio-fundo .esquerda-conteudo {
+        margin-bottom: 30px;
+    }
+}
