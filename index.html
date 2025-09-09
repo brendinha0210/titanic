@@ -1,85 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corinthians - O Time do Povo</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="acessibilidade.css"> </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Sport Club Corinthians Paulista</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
 <body>
-    <header>
-        <h1>Corinthians - O Time do Povo</h1>
-        <nav>
-            <ul>
-                <li><a href="#historia">História</a></li>
-                <li><a href="#titulos">Títulos</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#elenco">Elenco</a></li>
+    <header class="p-5">
+
+        <nav class="container d-flex justify-content-between align-items-center">
+            <img src="img/logo.png" class="nav-img" loading="lazy" alt="Logo do Sport Club Corinthians Paulista">
+            <ul class="nav mt-5">
+                <li class="nav-item"><a class="nav-link" href="#historia">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="#titulos">Títulos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
             </ul>
+            <div id="acessibilidade" class="menu-acessibilidade">
+                <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false">acessibilidade</button>
+                <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+                    <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-label="Aumentar o tamanho da fonte">A+</button>
+                    <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-label="diminuir o tamanho da fonte">A-</button>
+                    <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alterna o contraste de cores"> <i class="bi bi-shadows"></i></button>
+                </div>
+            </div>
         </nav>
-        <button id="toggleAcessibilidade">Modo de Alto Contraste</button>
+
     </header>
 
-    <main>
-        <section id="historia">
-            <h2>Nossa História</h2>
-            <p>O Sport Club Corinthians Paulista, fundado em 1910...</p>
-            </section>
+    <main class="container my-5">
 
-        <section id="titulos">
-            <h2>Títulos Conquistados</h2>
-            <ul>
-                <li>Campeonato Brasileiro (7x)</li>
-                <li>Libertadores (1x)</li>
-                <li>Mundial de Clubes (2x)</li>
-                </ul>
+        <section id="historia" class="my-5">
+            <div class="inicio-fundo d-flex justify-content-between align-items-center">
+                <div class="esquerda-conteudo">
+                    <h1 class="display-4 text fst-italic fw-bold">Sport Club Corinthians Paulista</h1>
+                    <p class="lead my-4">Conhecido como o "Time do Povo", o Corinthians foi fundado em 1910 por operários e se tornou uma das maiores potências do futebol brasileiro, com uma torcida apaixonada e uma história rica em lutas e glórias.</p>
+                    <a href="#titulos" class="btn btn-primary btn-lg botao-inicio fw-semibold">Ver Principais Títulos</a>
+                </div>
+                <img src="https://via.placeholder.com/500x400.png?text=Neo+Química+Arena" alt="Imagem da Neo Química Arena, estádio do Corinthians" title="Neo Química Arena" class="img-fluid img-inicio rounded">
+            </div>
         </section>
 
-        <section id="noticias">
-            <h2>Últimas Notícias</h2>
-            <article>
-                <h3>Notícia 1</h3>
-                <p>Resumo da notícia...</p>
-                <a href="#">Leia mais</a>
-            </article>
-            <article>
-                <h3>Notícia 2</h3>
-                <p>Resumo da notícia...</p>
-                <a href="#">Leia mais</a>
-            </article>
+        <section id="titulos" class="my-5 pt-6" tabindex="0" aria-label="Seção de principais títulos do Corinthians">
+            <div class="container d-flex align-items-center">
+                <div class="col-4 d-flex justify-content-center">
+                    <img src="https://via.placeholder.com/300x350.png?text=Mundial+2012" alt="Time do Corinthians comemorando o título Mundial de 2012" title="Conquista do Mundial de Clubes da FIFA 2012" class="rounded-pill" width="273" height="331" loading="lazy" style="border: 5px solid #000000; border-radius: 50%;">
+                </div>
+                <div class="col-5">
+                    <h2>Principais Títulos</h2>
+                    <ul class="list-group list-group-flush p-2">
+                        <li class="list-group-item"><strong>Mundial de Clubes da FIFA:</strong> 2 (2000, 2012)</li>
+                        <li class="list-group-item"><strong>Copa Libertadores da América:</strong> 1 (2012 - Invicto)</li>
+                        <li class="list-group-item"><strong>Campeonato Brasileiro:</strong> 7</li>
+                        <li class="list-group-item"><strong>Copa do Brasil:</strong> 3</li>
+                        <li class="list-group-item"><strong>Campeonato Paulista:</strong> 30 (Maior vencedor)</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <section id="elenco">
-            <h2>Elenco Principal</h2>
-            <div class="jogador">
-                <img src="https://via.placeholder.com/150" alt="Foto do Jogador 1">
-                <h3>Nome do Jogador 1</h3>
-                <p>Posição: Atacante</p>
+        <section id="galeria" tabindex="0" aria-label="Seção de galeria de imagens do Corinthians">
+            <h2 class="text-center pt-5">Galeria da Fiel</h2>
+            <div class="container p-3 mt-3 fundo-galeria">
+
+                <div class="row justify-content-md-center">
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/600x400.png?text=A+Fiel+Torcida" alt="A Fiel Torcida do Corinthians lotando o estádio com bandeiras e fumaça." title="A Fiel Torcida" class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/600x400.png?text=Corinthians+Feminino" alt="As jogadoras do time feminino do Corinthians comemorando um título importante." title="Corinthians Feminino - As Brabas" class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                </div>
+                <div class="row mt-4 justify-content-md-center">
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/600x400.png?text=Invasão+de+1976" alt="Imagem histórica da Invasão Corinthiana no Maracanã em 1976." title="Invasão Corinthiana de 1976" class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/600x400.png?text=Ídolo+Sócrates" alt="O ídolo Sócrates, líder da Democracia Corinthiana, com o punho erguido." title="Doutor Sócrates - Ídolo Eterno" class="img-fluid rounded-5" loading="lazy">
+                    </div>
+                </div>
             </div>
-            <div class="jogador">
-                <img src="https://via.placeholder.com/150" alt="Foto do Jogador 2">
-                <h3>Nome do Jogador 2</h3>
-                <p>Posição: Zagueiro</p>
+        </section>
+
+        <section id="contato">
+            <div class="container p-5 d-flex justify-content-center">
+                <div class="col-md-8 col-lg-10 rounded-5 formulario">
+                    <h2 class="mb-3">Deixe seu Feedback</h2>
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1" placeholder="Digite seu nome completo">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1" placeholder="Digite seu email">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4" placeholder="Escreva sua mensagem"></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar mensagem</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            </section>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Corinthians. Todos os direitos reservados.</p>
-        <div id="feedback-form">
-            <h3>Deixe seu Feedback</h3>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+    <footer class="text-center p-3 fst-italic">
+        <p>Acesse nossas redes:</p>
+        <i class="bi bi-whatsapp"></i>
+        <p> 11 99742-5202 </p>
+        <i class="bi bi-instagram"></i>
+        <p> @_breenda.sp_ </p>
+        <i class="bi bi-tiktok"> </i>
+        <p> @_brendinhaa02_ </p>
+        <p class="mt-3">Desenvolvido por Brenda, projeto fictício para fins informacionais.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+Observação Importante: As imagens na galeria (<img>) foram substituídas por placeholders (https://via.placeholder.com/...). Você precisará trocar os valores de src="..." para o caminho correto das suas novas imagens do Corinthians.
+
+
+
+
+
+
+
+
+faça uma interação no fim do site com a pessoa possa dar feedback e que mais no fim ainda, esteja escrito que o site foi criado por Brenda
+
+
+Com certeza! A estrutura que você me enviou já tem exatamente isso que você pediu:
+
+Uma seção de "Deixe seu Feedback": Onde o usuário pode preencher um formulário com nome, email e mensagem.
+
+Uma nota de rodapé: Que informa que o site foi desenvolvido por você, Brenda.
+
+Para deixar isso ainda mais claro e talvez um pouco mais organizado, fiz um pequeno ajuste no código do <footer> (o rodapé). Separei as suas informações de contato da nota de desenvolvimento para melhorar a leitura.
+
+Você pode substituir todo o seu <section id="contato"> e <footer> pelo código abaixo. O resto do arquivo pode continuar igual ao que te enviei anteriormente.
+
+Código Ajustado para o Final do Site (<main> e <footer>)
+Copie esta parte e substitua o final do seu arquivo index.html, logo após a seção da galeria.
+
+HTML
+
+        <section id="contato">
+            <div class="container p-5 d-flex justify-content-center">
+                <div class="col-md-8 col-lg-10 rounded-5 formulario">
+                    <h2 class="mb-3 text-center">Deixe seu Feedback</h2>
+                    <p class="text-center mb-4">Gostou do site? Tem alguma sugestão? Envie uma mensagem!</p>
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1" placeholder="Digite seu nome completo">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1" placeholder="seunome@email.com">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4" placeholder="Escreva sua mensagem aqui..."></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar Mensagem</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-4" style="background-color: #f8f9fa;">
+        <div class="container">
+            <p class="mb-2">Acesse minhas redes:</p>
+            <div class="d-flex justify-content-center gap-3 mb-3">
+                <span><i class="bi bi-whatsapp"></i> 11 99742-5202</span>
+                <span><i class="bi bi-instagram"></i> @_breenda.sp_</span>
+                <span><i class="bi bi-tiktok"></i> @_brendinhaa02_</span>
+            </div>
+            <hr>
+            <p class="mt-3 fst-italic">
+                <strong>Desenvolvido por Brenda.</strong>
+                <br>
+                <small>Projeto fictício para fins informacionais.</small>
+            </p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
     <script src="script.js"></script>
-    <script src="acessibilidade.js"></script> </body>
+
+</body>
+
 </html>
