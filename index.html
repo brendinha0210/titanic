@@ -48,18 +48,25 @@
     <header class="bg-black/80 backdrop-blur-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-black uppercase tracking-wider">Corinthians</h1>
-            <!-- Menu Desktop -->
-            <ul class="hidden md:flex space-x-8">
-                <li><a href="#historia" class="nav-link transition-colors">História</a></li>
-                <li><a href="#titulos" class="nav-link transition-colors">Títulos</a></li>
-                <li><a href="#idolos" class="nav-link transition-colors">Ídolos</a></li>
-                <li><a href="#noticias" class="nav-link transition-colors">Notícias</a></li>
-                <li><a href="#contato" class="nav-link transition-colors">Contato</a></li>
-            </ul>
-            <!-- Botão do Menu Mobile -->
-            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+            <div class="flex items-center">
+                <!-- Menu Desktop -->
+                <ul class="hidden md:flex space-x-8 mr-6">
+                    <li><a href="#historia" class="nav-link transition-colors">História</a></li>
+                    <li><a href="#titulos" class="nav-link transition-colors">Títulos</a></li>
+                    <li><a href="#idolos" class="nav-link transition-colors">Ídolos</a></li>
+                    <li><a href="#noticias" class="nav-link transition-colors">Notícias</a></li>
+                    <li><a href="#contato" class="nav-link transition-colors">Contato</a></li>
+                </ul>
+                 <!-- Controles de Acessibilidade -->
+                <div class="flex items-center border border-gray-600 rounded-full mr-4">
+                    <button id="decrease-font" class="px-3 py-1 text-sm font-bold hover:bg-gray-700 rounded-l-full" aria-label="Diminuir fonte">A-</button>
+                    <button id="increase-font" class="px-3 py-1 text-sm font-bold hover:bg-gray-700 rounded-r-full border-l border-gray-600" aria-label="Aumentar fonte">A+</button>
+                </div>
+                <!-- Botão do Menu Mobile -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </nav>
         <!-- Menu Mobile (oculto por padrão) -->
         <div id="mobile-menu" class="hidden md:hidden bg-black/90">
@@ -272,6 +279,25 @@
                 observer.observe(section);
             });
 
+            // Lógica para acessibilidade da fonte
+            const increaseFontBtn = document.getElementById('increase-font');
+            const decreaseFontBtn = document.getElementById('decrease-font');
+            const htmlEl = document.documentElement;
+
+            increaseFontBtn.addEventListener('click', () => {
+                let currentSize = parseFloat(window.getComputedStyle(htmlEl).fontSize);
+                if (currentSize < 22) { // Limite máximo para não quebrar o layout
+                    htmlEl.style.fontSize = (currentSize + 1) + 'px';
+                }
+            });
+
+            decreaseFontBtn.addEventListener('click', () => {
+                let currentSize = parseFloat(window.getComputedStyle(htmlEl).fontSize);
+                if (currentSize > 12) { // Limite mínimo
+                    htmlEl.style.fontSize = (currentSize - 1) + 'px';
+                }
+            });
+
             // Lógica para o formulário de contato
             const contactForm = document.getElementById('contact-form');
             const formContent = document.getElementById('form-content');
@@ -287,4 +313,3 @@
 
 </body>
 </html>
-
