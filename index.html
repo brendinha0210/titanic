@@ -14,7 +14,7 @@
             background-color: #101010;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1589952541022-835c233c6126?q=80&w=2070&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1631624618210-b21840f353c2?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Efeito Parallax */
@@ -40,6 +40,56 @@
         .nav-link:hover::after {
             width: 100%;
         }
+        
+        /* Estilos de Alto Contraste */
+        body.high-contrast {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+        .high-contrast header,
+        .high-contrast footer,
+        .high-contrast .bg-gray-900,
+        .high-contrast .bg-gray-900\/50, /* Escapando a barra para o CSS */
+        .high-contrast form,
+        .high-contrast div[class*="bg-"] {
+            background: #000 !important;
+            border: 2px solid #fff !important;
+        }
+        .high-contrast .hero-bg {
+            background-image: none !important;
+            background-color: #000 !important;
+        }
+        .high-contrast h1, .high-contrast h2, .high-contrast h3, .high-contrast h4,
+        .high-contrast p, .high-contrast label, .high-contrast span, 
+        .high-contrast .text-gray-400, .high-contrast .text-black {
+            color: #fff !important;
+        }
+        .high-contrast a {
+            color: #FFFF00 !important; /* Amarelo para links */
+            text-decoration: underline !important;
+        }
+        .high-contrast input, .high-contrast textarea {
+            background-color: #000 !important;
+            color: #fff !important;
+            border: 2px solid #fff !important;
+        }
+        .high-contrast button {
+            background-color: #000 !important;
+            color: #fff !important;
+            border: 1px solid #fff !important;
+        }
+        .high-contrast .bg-white { /* Botão de Enviar */
+            background-color: #000 !important;
+            color: #fff !important;
+            border: 2px solid #fff !important;
+        }
+        .high-contrast svg {
+            stroke: #fff !important;
+            fill: #fff !important;
+        }
+        .high-contrast .nav-link:hover::after {
+            background: #FFFF00; /* Sublinhado amarelo */
+        }
     </style>
 </head>
 <body class="text-white antialiased">
@@ -60,7 +110,12 @@
                  <!-- Controles de Acessibilidade -->
                 <div class="flex items-center border border-gray-600 rounded-full mr-4">
                     <button id="decrease-font" class="px-3 py-1 text-sm font-bold hover:bg-gray-700 rounded-l-full" aria-label="Diminuir fonte">A-</button>
-                    <button id="increase-font" class="px-3 py-1 text-sm font-bold hover:bg-gray-700 rounded-r-full border-l border-gray-600" aria-label="Aumentar fonte">A+</button>
+                    <button id="increase-font" class="px-3 py-1 text-sm font-bold hover:bg-gray-700 border-l border-r border-gray-600" aria-label="Aumentar fonte">A+</button>
+                    <button id="contrast-toggle" class="px-2 py-1 hover:bg-gray-700 rounded-r-full" aria-label="Alternar alto contraste">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM4.5 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                    </button>
                 </div>
                 <!-- Botão do Menu Mobile -->
                 <button id="mobile-menu-button" class="md:hidden focus:outline-none">
@@ -136,7 +191,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Card Ídolo 1 -->
                     <div class="bg-gray-900 rounded-lg overflow-hidden text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-800">
-                        <img src="https://images.unsplash.com/photo-1628854462432-3a3d2a71af2c?q=80&w=2070&auto=format&fit=crop" alt="[Imagem do jogador Sócrates]" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/S%C3%B3crates_em_1983.jpg/800px-S%C3%B3crates_em_1983.jpg" alt="Foto do jogador Sócrates" class="w-full h-64 object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/400x400/111111/FFFFFF?text=Foto+Indispon%C3%ADvel';">
                         <div class="p-6">
                             <h4 class="text-2xl font-bold">Sócrates</h4>
                             <p class="text-gray-400">O Doutor da Democracia Corinthiana.</p>
@@ -144,7 +199,7 @@
                     </div>
                     <!-- Card Ídolo 2 -->
                     <div class="bg-gray-900 rounded-lg overflow-hidden text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-800">
-                        <img src="https://images.unsplash.com/photo-1519412666242-792a7a28c319?q=80&w=1974&auto=format&fit=crop" alt="[Imagem do goleiro Cássio]" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
+                        <img src="https://images.unsplash.com/photo-1526233139288-50d520376a93?q=80&w=1974&auto=format&fit=crop" alt="[Imagem de um goleiro em ação, representando Cássio]" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/111111/FFFFFF?text=Foto+Indispon%C3%ADvel';">
                         <div class="p-6">
                             <h4 class="text-2xl font-bold">Cássio</h4>
                             <p class="text-gray-400">O Gigante das nossas maiores glórias.</p>
@@ -152,7 +207,7 @@
                     </div>
                     <!-- Card Ídolo 3 -->
                     <div class="bg-gray-900 rounded-lg overflow-hidden text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-800">
-                        <img src="https://images.unsplash.com/photo-1588198741334-de6c297552a4?q=80&w=1974&auto=format&fit=crop" alt="[Imagem do jogador Marcelinho Carioca]" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Marcelinho_Carioca_2011.jpg" alt="Foto do jogador Marcelinho Carioca" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/111111/FFFFFF?text=Foto+Indispon%C3%ADvel';">
                         <div class="p-6">
                             <h4 class="text-2xl font-bold">Marcelinho</h4>
                             <p class="text-gray-400">O Pé-de-Anjo que encantou a Fiel.</p>
@@ -169,7 +224,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Card de Notícia 1 -->
                     <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800 flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070&auto=format&fit=crop" alt="[Imagem de uma bola de futebol no centro do campo]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
+                        <img src="https://images.unsplash.com/photo-1596413244265-c384a5a5452d?q=80&w=2070&auto=format&fit=crop" alt="[Imagem de um garoto com a camisa do Brasil jogando bola]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
                         <div class="p-6 flex flex-col flex-grow">
                             <span class="text-xs font-semibold text-gray-400 uppercase mb-2">Futebol Masculino</span>
                             <h4 class="text-xl font-bold mb-2">Timão se prepara para clássico decisivo no fim de semana</h4>
@@ -179,7 +234,7 @@
                     </div>
                     <!-- Card de Notícia 2 -->
                     <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800 flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://images.unsplash.com/photo-1606161353284-1e51e23f114d?q=80&w=1974&auto=format&fit=crop" alt="[Imagem de um jogador de futebol assinando contrato]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
+                        <img src="https://images.unsplash.com/photo-1553874312-64c017a41254?q=80&w=2070&auto=format&fit=crop" alt="[Imagem dos refletores de um estádio de futebol]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
                         <div class="p-6 flex flex-col flex-grow">
                             <span class="text-xs font-semibold text-gray-400 uppercase mb-2">Mercado da Bola</span>
                             <h4 class="text-xl font-bold mb-2">Corinthians anuncia novo reforço para o meio-campo</h4>
@@ -189,7 +244,7 @@
                     </div>
                     <!-- Card de Notícia 3 -->
                     <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800 flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=2070&auto=format&fit=crop" alt="[Imagem de torcedores no estádio com bandeiras]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
+                        <img src="https://images.unsplash.com/photo-1629280140733-8c2a8061d3df?q=80&w=1974&auto=format&fit=crop" alt="[Imagem de torcedores brasileiros comemorando]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/FFFFFF?text=Imagem+Indispon%C3%ADvel';">
                         <div class="p-6 flex flex-col flex-grow">
                             <span class="text-xs font-semibold text-gray-400 uppercase mb-2">Fiel Torcedor</span>
                             <h4 class="text-xl font-bold mb-2">Nova campanha de sócios-torcedores é lançada com benefícios exclusivos</h4>
@@ -279,14 +334,17 @@
                 observer.observe(section);
             });
 
-            // Lógica para acessibilidade da fonte
+            // --- LÓGICA DE ACESSIBILIDADE ---
             const increaseFontBtn = document.getElementById('increase-font');
             const decreaseFontBtn = document.getElementById('decrease-font');
+            const contrastToggleBtn = document.getElementById('contrast-toggle');
+            const bodyEl = document.body;
             const htmlEl = document.documentElement;
 
+            // Aumentar e diminuir fonte
             increaseFontBtn.addEventListener('click', () => {
                 let currentSize = parseFloat(window.getComputedStyle(htmlEl).fontSize);
-                if (currentSize < 22) { // Limite máximo para não quebrar o layout
+                if (currentSize < 22) { // Limite máximo
                     htmlEl.style.fontSize = (currentSize + 1) + 'px';
                 }
             });
@@ -297,6 +355,19 @@
                     htmlEl.style.fontSize = (currentSize - 1) + 'px';
                 }
             });
+            
+            // Alto Contraste
+            // Verifica a preferência no localStorage ao carregar a página
+            if (localStorage.getItem('highContrast') === 'true') {
+                bodyEl.classList.add('high-contrast');
+            }
+
+            contrastToggleBtn.addEventListener('click', () => {
+                bodyEl.classList.toggle('high-contrast');
+                // Salva a preferência no localStorage
+                localStorage.setItem('highContrast', bodyEl.classList.contains('high-contrast'));
+            });
+
 
             // Lógica para o formulário de contato
             const contactForm = document.getElementById('contact-form');
